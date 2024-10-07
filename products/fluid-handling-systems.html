@@ -73,56 +73,132 @@
     <!-- Navbar End -->
 
     <!-- Products Section Start -->
-    <div class="container my-5">
-        <h1 class="text-center mb-4">Fluid Handling Systems</h1>
-        <div class="row">
-            <!-- Product 1 -->
-            <div class="col-md-4 mb-4">
-                <div class="card h-100">
-                    <img src="https://via.placeholder.com/350x200" class="card-img-top p-3" alt="Product 1">
-                    <div class="card-body">
-                        <h5 class="card-title">Product 1</h5>
-                        <ul class="list-unstyled">
-                            <li><strong>Specification 1:</strong> Value 1</li>
-                            <li><strong>Specification 2:</strong> Value 2</li>
-                            <li><strong>Specification 3:</strong> Value 3</li>
-                        </ul>
-                        <a href="#" class="btn btn-primary">Read More</a>
-                    </div>
-                </div>
+<div class="container my-5">
+    <h1 class="text-center mb-4">Water Systems</h1>
+    <div class="row" id="product-container">
+        <!-- Products will be dynamically inserted here -->
+    </div>
+</div>
+<!-- Products Section End -->
+
+<!-- Modal Structure -->
+<div class="modal fade" id="productModal" tabindex="-1" aria-labelledby="productModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="productModalLabel">Product Title</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <!-- Product 2 -->
-            <div class="col-md-4 mb-4">
-                <div class="card h-100">
-                    <img src="https://via.placeholder.com/350x200" class="card-img-top p-3" alt="Product 2">
-                    <div class="card-body">
-                        <h5 class="card-title">Product 2</h5>
-                        <ul class="list-unstyled">
-                            <li><strong>Specification 1:</strong> Value 1</li>
-                            <li><strong>Specification 2:</strong> Value 2</li>
-                            <li><strong>Specification 3:</strong> Value 3</li>
-                        </ul>
-                        <a href="#" class="btn btn-primary">Read More</a>
-                    </div>
-                </div>
-            </div>
-            <!-- Product 3 -->
-            <div class="col-md-4 mb-4">
-                <div class="card h-100">
-                    <img src="https://via.placeholder.com/350x200" class="card-img-top p-3" alt="Product 3">
-                    <div class="card-body">
-                        <h5 class="card-title">Product 3</h5>
-                        <ul class="list-unstyled">
-                            <li><strong>Specification 1:</strong> Value 1</li>
-                            <li><strong>Specification 2:</strong> Value 2</li>
-                            <li><strong>Specification 3:</strong> Value 3</li>
-                        </ul>
-                        <a href="#" class="btn btn-primary">Read More</a>
-                    </div>
+            <div class="modal-body d-flex flex-column flex-md-row"> <!-- Flexbox for responsive layout -->
+                <img id="modalProductImg" src="" class="img-fluid me-3 mb-3 mb-md-0" alt="Product Image" style="max-width: 100%; max-height: 300px; object-fit: cover;"> <!-- Responsive image -->
+                <div class="flex-grow-1"> <!-- Allow this div to grow and fill the remaining space -->
+                    <ul id="modalProductSpecs" class="list-unstyled mb-3"></ul>
+                    <div id="modalProductDescription"></div>
+                    <h6>More Images:</h6>
+                    <div id="modalAdditionalImages" class="d-flex flex-wrap"></div>
                 </div>
             </div>
         </div>
     </div>
+</div>
+
+<!-- Additional CSS Styles -->
+<style>
+    
+</style>
+
+<!-- JavaScript for Dynamic Product Rendering -->
+<script>
+    const products = [
+    {
+        title: 'Product 1',
+        specifications: [
+            { name: 'Specification 1', value: 'Value 1' },
+            { name: 'Specification 2', value: 'Value 2' },
+            { name: 'Specification 3', value: 'Value 3' },
+        ],
+        imgSrc: 'https://www17.wellsfargomedia.com/assets/images/the-private-bank/mountain-stream-350x200.jpg',
+        description: 'Detailed description for Product 1. ',
+        additionalImages: [
+            'https://via.placeholder.com/150',
+            'https://via.placeholder.com/150',
+            'https://via.placeholder.com/150'
+        ],
+    },
+    {
+        title: 'Product 2',
+        specifications: [
+            { name: 'Specification 1', value: 'Value 1' },
+            { name: 'Specification 2', value: 'Value 2' },
+            { name: 'Specification 3', value: 'Value 3' },
+        ],
+        imgSrc: 'https://www17.wellsfargomedia.com/assets/images/the-private-bank/oil-field-and-drilling-rigs-350x200.jpg',
+        description: 'Detailed description for Product 2.',
+        additionalImages: [
+            'https://via.placeholder.com/150',
+            'https://via.placeholder.com/150',
+            'https://via.placeholder.com/150'
+        ],
+    },
+    {
+        title: 'Product 3',
+        specifications: [
+            { name: 'Specification 1', value: 'Value 1' },
+            { name: 'Specification 2', value: 'Value 2' },
+            { name: 'Specification 3', value: 'Value 3' },
+        ],
+        imgSrc: 'https://static.vecteezy.com/system/resources/thumbnails/038/987/289/small/ai-generated-majestic-mountain-peak-reflects-tranquil-sunset-over-water-generated-by-ai-photo.jpg',
+        description: 'Detailed description for Product 3.',
+        additionalImages: [
+            'https://via.placeholder.com/150',
+            'https://via.placeholder.com/150',
+            'https://via.placeholder.com/150'
+        ],
+    },
+];
+
+const productContainer = document.getElementById('product-container');
+
+products.forEach((product, index) => {
+    const cardHTML = `
+        <div class="col-md-4 mb-4">
+            <div class="card h-100 product-card">
+                <img src="${product.imgSrc}" class="card-img-top" alt="${product.title}">
+                <div class="card-body">
+                    <h5 class="card-title">${product.title}</h5>
+                    <ul class="list-unstyled">
+                        ${product.specifications.map(spec => `<li><strong>${spec.name}:</strong> ${spec.value}</li>`).join('')}
+                    </ul>
+                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#productModal" data-index="${index}">Read More</button>
+                </div>
+            </div>
+        </div>
+    `;
+    productContainer.innerHTML += cardHTML;
+});
+
+// Event listener for modal to load product details
+document.getElementById('productModal').addEventListener('show.bs.modal', event => {
+    const button = event.relatedTarget; // Button that triggered the modal
+    const index = button.getAttribute('data-index'); // Extract info from data-* attributes
+    const product = products[index];
+
+    // Update the modal's content
+    document.getElementById('productModalLabel').innerText = product.title;
+    document.getElementById('modalProductImg').src = product.imgSrc;
+
+    // Update specifications
+    const specsList = product.specifications.map(spec => `<li><strong>${spec.name}:</strong> ${spec.value}</li>`).join('');
+    document.getElementById('modalProductSpecs').innerHTML = specsList;
+
+    // Update description
+    document.getElementById('modalProductDescription').innerText = product.description;
+
+    // Update additional images
+    const additionalImagesHTML = product.additionalImages.map(img => `<img src="${img}" class="img-thumbnail me-2" style="width: 100px; height: 100px;" alt="Additional Image">`).join('');
+    document.getElementById('modalAdditionalImages').innerHTML = additionalImagesHTML;
+});
+</script>
     <!-- Products Section End -->
 
     <!-- Footer Start -->
