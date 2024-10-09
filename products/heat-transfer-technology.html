@@ -112,13 +112,15 @@
 <script>
     const products = [
     {
-        title: 'Product 1',
+        title: 'Plate Heat Exchangers',
         specifications: [
-            { name: 'Specification 1', value: 'Value 1' },
-            { name: 'Specification 2', value: 'Value 2' },
-            { name: 'Specification 3', value: 'Value 3' },
+            { name: 'Specifications', value: 'Plate heat exchangers (PHEs) are highly efficient heat transfer devices used to transfer heat between two fluids without mixing them.' },
+            { name: 'Heat Transfer capacity', value: '10 kW to 100 kW (34,000 BTU/hr to 340,000 BTU/hr)' },
+            { name: 'Number of Plates', value: 'Small Units: Typically 10–50 plates.' },
+            { name: 'Plate Size', value: '200 mm × 500 mm (8 in × 20 in) or smaller.' },
+            { name: 'Flow Rate', value: '0.1 m³/h to 10 m³/h (0.5 GPM to 44 GPM).' },
         ],
-        imgSrc: 'https://www17.wellsfargomedia.com/assets/images/the-private-bank/mountain-stream-350x200.jpg',
+        imgSrc: 'img/heat-exhangers/heat-exhangers-1.jpg',
         description: 'Detailed description for Product 1. ',
         additionalImages: [
             'https://via.placeholder.com/150',
@@ -127,13 +129,15 @@
         ],
     },
     {
-        title: 'Product 2',
+        title: 'Hygenic Plate Heat Exchangers',
         specifications: [
-            { name: 'Specification 1', value: 'Value 1' },
-            { name: 'Specification 2', value: 'Value 2' },
-            { name: 'Specification 3', value: 'Value 3' },
+            { name: 'Specifications', value: 'Hygienic plate heat exchangers are specifically designed for industries where cleanliness, sterilization, and sanitary conditions.' },
+            { name: 'Heat Transfer capacity', value: ' 10 kW to 100 kW (34,000 BTU/hr to 340,000 BTU/hr).' },
+            { name: 'Number of Plates', value: ' 10 to 50 plates' },
+            { name: 'Plate Size', value: 'Typically range from 100 mm x 300 mm to 300 mm x 600 mm (4 in x 12 in to 12 in x 24 in).' },
+            { name: 'Flow Rate', value: ' 0.5 m³/h to 10 m³/h (2.2 GPM to 44 GPM).' },
         ],
-        imgSrc: 'https://www17.wellsfargomedia.com/assets/images/the-private-bank/oil-field-and-drilling-rigs-350x200.jpg',
+        imgSrc: 'img/heat-exhangers/heat-exhangers-2.jpg',
         description: 'Detailed description for Product 2.',
         additionalImages: [
             'https://via.placeholder.com/150',
@@ -142,13 +146,63 @@
         ],
     },
     {
-        title: 'Product 3',
+        title: 'Semi Welded Heat Exchangers',
         specifications: [
-            { name: 'Specification 1', value: 'Value 1' },
-            { name: 'Specification 2', value: 'Value 2' },
-            { name: 'Specification 3', value: 'Value 3' },
+            { name: 'Specifications', value: 'Value 1' },
+            { name: 'Heat Transfer capacity', value: 'Value 2' },
+            { name: 'Number of Plates', value: 'Value 3' },
+            { name: 'Plate Size', value: 'Value 4' },
+            { name: 'Flow Rate', value: 'Value 5' },
         ],
-        imgSrc: 'https://static.vecteezy.com/system/resources/thumbnails/038/987/289/small/ai-generated-majestic-mountain-peak-reflects-tranquil-sunset-over-water-generated-by-ai-photo.jpg',
+        imgSrc: 'img/heat-exhangers/heat-exhangers-3.jpg',
+        description: 'Detailed description for Product 3.',
+        additionalImages: [
+            'https://via.placeholder.com/150',
+            'https://via.placeholder.com/150',
+            'https://via.placeholder.com/150'
+        ],
+    },{
+        title: 'Shell & Tube Heat Exchnger',
+        specifications: [
+            { name: 'Specifications', value: 'Value 1' },
+            { name: 'Heat Transfer capacity', value: 'Value 2' },
+            { name: 'Number of Plates', value: 'Value 3' },
+            { name: 'Plate Size', value: 'Value 4' },
+            { name: 'Flow Rate', value: 'Value 5' },
+        ],
+        imgSrc: 'img/heat-exhangers/heat-exhangers-4.jpg',
+        description: 'Detailed description for Product 3.',
+        additionalImages: [
+            'https://via.placeholder.com/150',
+            'https://via.placeholder.com/150',
+            'https://via.placeholder.com/150'
+        ],
+    },{
+        title: 'Hot Water Generators',
+        specifications: [
+            { name: 'Specifications', value: 'Value 1' },
+            { name: 'Heat Transfer capacity', value: 'Value 2' },
+            { name: 'Number of Plates', value: 'Value 3' },
+            { name: 'Plate Size', value: 'Value 4' },
+            { name: 'Flow Rate', value: 'Value 5' },
+        ],
+        imgSrc: 'img/heat-exhangers/heat-exhangers-5.jpg',
+        description: 'Detailed description for Product 3.',
+        additionalImages: [
+            'https://via.placeholder.com/150',
+            'https://via.placeholder.com/150',
+            'https://via.placeholder.com/150'
+        ],
+    },{
+        title: 'Point of Coolers',
+        specifications: [
+            { name: 'Specifications', value: 'Value 1' },
+            { name: 'Heat Transfer capacity', value: 'Value 2' },
+            { name: 'Number of Plates', value: 'Value 3' },
+            { name: 'Plate Size', value: 'Value 4' },
+            { name: 'Flow Rate', value: 'Value 5' },
+        ],
+        imgSrc: 'img/heat-exhangers/heat-exhangers-6.jpg',
         description: 'Detailed description for Product 3.',
         additionalImages: [
             'https://via.placeholder.com/150',
@@ -167,9 +221,6 @@ products.forEach((product, index) => {
                 <img src="${product.imgSrc}" class="card-img-top" alt="${product.title}">
                 <div class="card-body">
                     <h5 class="card-title">${product.title}</h5>
-                    <ul class="list-unstyled">
-                        ${product.specifications.map(spec => `<li><strong>${spec.name}:</strong> ${spec.value}</li>`).join('')}
-                    </ul>
                     <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#productModal" data-index="${index}">Read More</button>
                 </div>
             </div>
@@ -177,6 +228,8 @@ products.forEach((product, index) => {
     `;
     productContainer.innerHTML += cardHTML;
 });
+
+// <ul class="list-unstyled">${product.specifications.map(spec => `<li><strong>${spec.name}:</strong> ${spec.value}</li>`).join('')} </ul>
 
 // Event listener for modal to load product details
 document.getElementById('productModal').addEventListener('show.bs.modal', event => {
