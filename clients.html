@@ -184,27 +184,35 @@
     <script src="js/main.js"></script>
       <!-- Custom Javascript for Dynamic Client Logos -->
       <script>
-        // JavaScript to dynamically insert client logos
-        const clientLogoContainer = document.getElementById('client-logo-container');
-        
-        // Number of client logos, assuming images are named 1.jpg, 2.jpg, 3.jpg, etc.
-        const totalLogos = 64; // Replace this with the actual number of logos available
+         const clientLogoContainer = document.getElementById('client-logo-container');
+    
+    // Number of client logos, assuming images are named 1.jpg, 2.jpg, 3.jpg, etc.
+    const totalLogos = 64; // Replace this with the actual number of logos available
 
-        // Create and insert client logos dynamically
-        for (let i = 1; i <= totalLogos; i++) {
-            // Create an image element
-            const imgElement = document.createElement('img');
-            imgElement.src = `img/clients/${i}.jpg`; // Image path (adjust accordingly)
-            imgElement.alt = `Client ${i}`;
-            imgElement.className = 'client-logo wow bounceIn'; // Adding CSS class and animation effect
-            imgElement.setAttribute('data-wow-delay', `${i * 0.01}s`); // Staggered animation delay
+    // Create an array of logo indices and shuffle it
+    const logoIndices = Array.from({ length: totalLogos }, (_, index) => index + 1);
+    
+    // Shuffle the array using Fisher-Yates algorithm
+    for (let i = logoIndices.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [logoIndices[i], logoIndices[j]] = [logoIndices[j], logoIndices[i]];
+    }
 
-            // Append the image to the container
-            clientLogoContainer.appendChild(imgElement);
-        }
+    // Create and insert client logos dynamically based on the shuffled indices
+    logoIndices.forEach((logoIndex, i) => {
+        // Create an image element
+        const imgElement = document.createElement('img');
+        imgElement.src = `img/clients/${logoIndex}.jpg`; // Image path (adjust accordingly)
+        imgElement.alt = `Client ${logoIndex}`;
+        imgElement.className = 'client-logo wow bounceIn'; // Adding CSS class and animation effect
+        imgElement.setAttribute('data-wow-delay', `${i * 0.01}s`); // Staggered animation delay
 
-        // Initialize WOW.js for animations
-        new WOW().init();
+        // Append the image to the container
+        clientLogoContainer.appendChild(imgElement);
+    });
+
+    // Initialize WOW.js for animations
+    new WOW().init();
     </script>
 </body>
 
