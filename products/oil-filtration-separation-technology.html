@@ -91,12 +91,9 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body d-flex flex-column flex-md-row"> <!-- Flexbox for responsive layout -->
-                <img id="modalProductImg" src="" class="img-fluid me-3 mb-3 mb-md-0" alt="Product Image" style="max-width: 100%; max-height: 300px; object-fit: cover;"> <!-- Responsive image -->
+                <img id="modalProductImg" src="" class="img-fluid me-3 mb-3 mb-md-0" alt="Product Image" style="max-width: 300px; max-height: 300px; object-fit: cover;"> <!-- Responsive image -->
                 <div class="flex-grow-1"> <!-- Allow this div to grow and fill the remaining space -->
                     <ul id="modalProductSpecs" class="list-unstyled mb-3"></ul>
-                    <div id="modalProductDescription"></div>
-                    <h6>More Images:</h6>
-                    <div id="modalAdditionalImages" class="d-flex flex-wrap"></div>
                 </div>
             </div>
         </div>
@@ -112,50 +109,61 @@
 <script>
     const products = [
     {
-        title: 'Product 1',
+        title: 'Decanter',
         specifications: [
-            { name: 'Specification 1', value: 'Value 1' },
-            { name: 'Specification 2', value: 'Value 2' },
-            { name: 'Specification 3', value: 'Value 3' },
+            { name: 'Specifications', value: 'A decanter is a mechanical device used primarily for separating liquids from solids or for separating immiscible liquids with different densities.' },
+            { name: 'Heat Transfer Capacity', value: 'Refers to the ability to manage the heat generated during the separation process.' }
         ],
-        imgSrc: 'https://www17.wellsfargomedia.com/assets/images/the-private-bank/mountain-stream-350x200.jpg',
-        description: 'Detailed description for Product 1. ',
-        additionalImages: [
-            'https://via.placeholder.com/150',
-            'https://via.placeholder.com/150',
-            'https://via.placeholder.com/150'
-        ],
+        imgSrc: '../img/separators/decanter.png'
     },
     {
-        title: 'Product 2',
+        title: 'Oil Filtration Service',
         specifications: [
-            { name: 'Specification 1', value: 'Value 1' },
-            { name: 'Specification 2', value: 'Value 2' },
-            { name: 'Specification 3', value: 'Value 3' },
+            { name: 'Specifications', value: 'Refers to the technical and operational details of the process used to remove contaminants, impurities, and water from lubricating oils, hydraulic oils, and other industrial fluids.' },
+            { name: 'Heat Transfer Capacity', value: 'Relates to the system’s ability to manage and dissipate heat generated during the filtration process.' }
         ],
-        imgSrc: 'https://www17.wellsfargomedia.com/assets/images/the-private-bank/oil-field-and-drilling-rigs-350x200.jpg',
-        description: 'Detailed description for Product 2.',
-        additionalImages: [
-            'https://via.placeholder.com/150',
-            'https://via.placeholder.com/150',
-            'https://via.placeholder.com/150'
-        ],
+        imgSrc: '../img/filtration/oil-filtration-service.png'
     },
     {
-        title: 'Product 3',
+        title: 'PSA Nitrogen Gas Generators',
         specifications: [
-            { name: 'Specification 1', value: 'Value 1' },
-            { name: 'Specification 2', value: 'Value 2' },
-            { name: 'Specification 3', value: 'Value 3' },
+            { name: 'Specifications', value: 'Pressure Swing Adsorption (PSA) nitrogen gas generators are designed to produce nitrogen gas from compressed air using an adsorption process.' },
+            { name: 'Heat Transfer Capacity', value: 'Relates to the ability to manage and dissipate heat generated during the nitrogen production process.' }
         ],
-        imgSrc: 'https://static.vecteezy.com/system/resources/thumbnails/038/987/289/small/ai-generated-majestic-mountain-peak-reflects-tranquil-sunset-over-water-generated-by-ai-photo.jpg',
-        description: 'Detailed description for Product 3.',
-        additionalImages: [
-            'https://via.placeholder.com/150',
-            'https://via.placeholder.com/150',
-            'https://via.placeholder.com/150'
-        ],
+        imgSrc: '../img/gas-generators/psa-nitrogen-gas-generator.png'
     },
+    {
+        title: 'Oxygen Plants',
+        specifications: [
+            { name: 'Specifications', value: 'Industrial facilities designed to produce oxygen, typically through methods like Pressure Swing Adsorption (PSA), Vacuum Pressure Swing Adsorption (VPSA), or cryogenic distillation.' },
+            { name: 'Heat Transfer Capacity', value: 'Relates to the ability to manage and dissipate heat generated during the production of oxygen.' }
+        ],
+        imgSrc: '../img/oxygen-plants/oxygen-plant.png'
+    },
+    {
+        title: 'Oil Purifier',
+        specifications: [
+            { name: 'Specifications', value: 'Essential equipment used to remove impurities, water, and contaminants from oils, including lubricating oils, hydraulic oils, and fuel oils.' },
+            { name: 'Heat Transfer Capacity', value: 'Important for effective heat management, contributing to the efficiency of the purification process.' }
+        ],
+        imgSrc: '../img/filtration/oil-purifier.png'
+    },
+    {
+        title: 'Coolant Filtration Systems',
+        specifications: [
+            { name: 'Specifications', value: 'Essential in industrial processes like machining and metalworking, to maintain coolant quality and prolong tool life.' },
+            { name: 'Heat Transfer Capacity', value: 'Important for maintaining optimal operating conditions and ensuring efficiency of cooling fluids.' }
+        ],
+        imgSrc: '../img/filtration/coolant-filtration-system.png'
+    },
+    {
+        title: 'Hydro Cyclone Separator',
+        specifications: [
+            { name: 'Specifications', value: 'Used in various industries for separating solids from liquids based on centrifugal force.' },
+            { name: 'Heat Transfer Capacity', value: 'Critical for effective operation, particularly where temperature variations affect separation efficiency and performance.' }
+        ],
+        imgSrc: '../img/separators/hydro-cyclone-separator.png'
+    }
 ];
 
 const productContainer = document.getElementById('product-container');
@@ -167,9 +175,6 @@ products.forEach((product, index) => {
                 <img src="${product.imgSrc}" class="card-img-top" alt="${product.title}">
                 <div class="card-body">
                     <h5 class="card-title">${product.title}</h5>
-                    <ul class="list-unstyled">
-                        ${product.specifications.map(spec => `<li><strong>${spec.name}:</strong> ${spec.value}</li>`).join('')}
-                    </ul>
                     <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#productModal" data-index="${index}">Read More</button>
                 </div>
             </div>
@@ -177,6 +182,8 @@ products.forEach((product, index) => {
     `;
     productContainer.innerHTML += cardHTML;
 });
+
+// <ul class="list-unstyled">${product.specifications.map(spec => `<li><strong>${spec.name}:</strong> ${spec.value}</li>`).join('')} </ul>
 
 // Event listener for modal to load product details
 document.getElementById('productModal').addEventListener('show.bs.modal', event => {
@@ -191,13 +198,6 @@ document.getElementById('productModal').addEventListener('show.bs.modal', event 
     // Update specifications
     const specsList = product.specifications.map(spec => `<li><strong>${spec.name}:</strong> ${spec.value}</li>`).join('');
     document.getElementById('modalProductSpecs').innerHTML = specsList;
-
-    // Update description
-    document.getElementById('modalProductDescription').innerText = product.description;
-
-    // Update additional images
-    const additionalImagesHTML = product.additionalImages.map(img => `<img src="${img}" class="img-thumbnail me-2" style="width: 100px; height: 100px;" alt="Additional Image">`).join('');
-    document.getElementById('modalAdditionalImages').innerHTML = additionalImagesHTML;
 });
 </script>
     <!-- Products Section End -->

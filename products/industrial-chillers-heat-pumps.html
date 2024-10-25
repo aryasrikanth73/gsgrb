@@ -57,7 +57,7 @@
                     <a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown">Products</a>
                     <div class="dropdown-menu fade-up m-0">
                         <a class="dropdown-item" href="heat-transfer-technology.html">Heat Transfer Technology</a>
-                        <a class="dropdown-item active" href="industrial-chillers-heat-pumps.html">Industrial Chillers & Heat Pumps</a>
+                        <a class="dropdown-item  active" href="industrial-chillers-heat-pumps.html">Industrial Chillers & Heat Pumps</a>
                         <a class="dropdown-item" href="air-compressors-vacuum-pumps.html">Air Compressors & Vacuum Pumps</a>
                         <a class="dropdown-item" href="oil-filtration-separation-technology.html">Oil Filtration & Separation Technology</a>
                         <a class="dropdown-item" href="water-systems.html">Water Systems & CIP Systems</a>
@@ -94,9 +94,6 @@
                 <img id="modalProductImg" src="" class="img-fluid me-3 mb-3 mb-md-0" alt="Product Image" style="max-width: 100%; max-height: 300px; object-fit: cover;"> <!-- Responsive image -->
                 <div class="flex-grow-1"> <!-- Allow this div to grow and fill the remaining space -->
                     <ul id="modalProductSpecs" class="list-unstyled mb-3"></ul>
-                    <div id="modalProductDescription"></div>
-                    <h6>More Images:</h6>
-                    <div id="modalAdditionalImages" class="d-flex flex-wrap"></div>
                 </div>
             </div>
         </div>
@@ -112,50 +109,65 @@
 <script>
     const products = [
     {
-        title: 'Product 1',
-        specifications: [
-            { name: 'Specification 1', value: 'Value 1' },
-            { name: 'Specification 2', value: 'Value 2' },
-            { name: 'Specification 3', value: 'Value 3' },
-        ],
-        imgSrc: 'https://www17.wellsfargomedia.com/assets/images/the-private-bank/mountain-stream-350x200.jpg',
-        description: 'Detailed description for Product 1. ',
-        additionalImages: [
-            'https://via.placeholder.com/150',
-            'https://via.placeholder.com/150',
-            'https://via.placeholder.com/150'
-        ],
-    },
-    {
-        title: 'Product 2',
-        specifications: [
-            { name: 'Specification 1', value: 'Value 1' },
-            { name: 'Specification 2', value: 'Value 2' },
-            { name: 'Specification 3', value: 'Value 3' },
-        ],
-        imgSrc: 'https://www17.wellsfargomedia.com/assets/images/the-private-bank/oil-field-and-drilling-rigs-350x200.jpg',
-        description: 'Detailed description for Product 2.',
-        additionalImages: [
-            'https://via.placeholder.com/150',
-            'https://via.placeholder.com/150',
-            'https://via.placeholder.com/150'
-        ],
-    },
-    {
-        title: 'Product 3',
-        specifications: [
-            { name: 'Specification 1', value: 'Value 1' },
-            { name: 'Specification 2', value: 'Value 2' },
-            { name: 'Specification 3', value: 'Value 3' },
-        ],
-        imgSrc: 'https://static.vecteezy.com/system/resources/thumbnails/038/987/289/small/ai-generated-majestic-mountain-peak-reflects-tranquil-sunset-over-water-generated-by-ai-photo.jpg',
-        description: 'Detailed description for Product 3.',
-        additionalImages: [
-            'https://via.placeholder.com/150',
-            'https://via.placeholder.com/150',
-            'https://via.placeholder.com/150'
-        ],
-    },
+    title: 'Scroll Chillers',
+    specifications: [
+        { name: 'Specifications', value: 'Scroll chillers are a type of chiller that use scroll compressors for cooling purposes.' },
+        { name: 'Heat Transfer Capacity', value: 'Scroll compressors are designed to handle various load conditions. The more compressors or higher-capacity compressors used, the greater the heat transfer capacity.' },
+        { name: 'Number of Plates', value: 'Larger chillers require more heat transfer area, which means more plates.' },
+        { name: 'Plate Size', value: 'Plate dimensions: 200 mm x 600 mm (7.9 inches x 23.6 inches) to 400 mm x 800 mm (15.7 inches x 31.5 inches).' }
+    ],
+    imgSrc: '../img/chillers/scroll-chillers.png'
+},
+{
+    title: 'Screw Chillers',
+    specifications: [
+        { name: 'Specifications', value: 'Screw chillers are a type of chiller that use rotary screw compressors for cooling applications.' },
+        { name: 'Heat Transfer Capacity', value: 'Screw chillers typically have a cooling capacity ranging from 50 kW to over 2,000 kW (approximately 14 to 600 tons).' },
+        { name: 'Number of Plates', value: 'Plate size can range widely, and the number of plates typically can be anywhere from 20 to 100 plates or more, depending on the required surface area for heat transfer.' },
+        { name: 'Plate Size', value: '200 mm x 600 mm (approximately 7.9 inches x 23.6 inches) to 500 mm x 1200 mm (approximately 19.7 inches x 47.2 inches).' }
+    ],
+    imgSrc: '../img/chillers/screw-chillers.png'
+},
+{
+    title: 'PHE Cross Section',
+    specifications: [
+        { name: 'Specifications', value: 'The cross-section specifications of a plate heat exchanger (PHE), such as those used in screw chiller.' },
+        { name: 'Heat Transfer Capacity', value: 'The heat transfer capacity of a plate heat exchanger (PHE) is a crucial aspect that determines how effectively it can transfer heat between two fluids.' },
+        { name: 'Number of Plates', value: 'Larger chillers require more heat transfer area, which means more plates.' },
+        { name: 'Plate Size', value: 'Length: Ranges from 200 mm (7.9 inches) to 1,200 mm (47.2 inches) or more. Width: Ranges from 100 mm (3.9 inches) to 800 mm (31.5 inches) or more.' }
+    ],
+    imgSrc: '../img/chillers/phe-cross-section.png'
+},
+{
+    title: 'Centrifugal Chillers',
+    specifications: [
+        { name: 'Specifications', value: 'Centrifugal chillers are a type of chiller that uses a centrifugal compressor to provide cooling for large commercial and industrial applications.' },
+        { name: 'Heat Transfer Capacity', value: 'Centrifugal chillers typically have a cooling capacity range from 100 kW to over 10,000 kW (approximately 30 to 3,000 tons). Some large industrial models can exceed this range.' },
+        { name: 'Number of Plates', value: 'The main component of a centrifugal chiller is the centrifugal compressor, which compresses the refrigerant to facilitate heat transfer.' },
+        { name: 'Plate Size', value: '200 mm x 600 mm (approximately 7.9 inches x 23.6 inches) to 500 mm x 1200 mm (approximately 19.7 inches x 47.2 inches).' }
+    ],
+    imgSrc: '../img/chillers/centrifugal-chillers.png'
+},
+{
+    title: 'Heat Pump Chillers',
+    specifications: [
+        { name: 'Specifications', value: 'Heat pump chillers, often referred to as heat pumps or heat recovery chillers, are versatile systems that can provide both heating and cooling.' },
+        { name: 'Heat Transfer Capacity', value: 'Cooling Capacity: Heat pump chillers typically have cooling capacities that range from 5 kW to over 1,500 kW (approximately 1.4 to 425 tons).' },
+        { name: 'Number of Plates', value: 'The number of plates in a plate heat exchanger can vary widely based on the design, application, and required heat transfer capacity.' },
+        { name: 'Plate Size', value: '200 mm x 600 mm (approximately 7.9 inches x 23.6 inches) to 500 mm x 1200 mm (approximately 19.7 inches x 47.2 inches).' }
+    ],
+    imgSrc: '../img/chillers/heat-pump-chillers.png'
+},
+{
+    title: 'VRF/DX Systems',
+    specifications: [
+        { name: 'Specifications', value: 'VRF (Variable Refrigerant Flow) and DX (Direct Expansion) systems are popular HVAC solutions that provide efficient heating and cooling for commercial and residential buildings.' },
+        { name: 'Heat Transfer Capacity', value: 'Typically ranges from 10 kW to over 200 kW (approximately 3 to 60 tons).' },
+        { name: 'Number of Plates', value: 'For DX systems that incorporate plate heat exchangers (usually for specific applications or modifications), the number of plates can vary widely based on the design.' },
+        { name: 'Plate Size', value: '200 mm x 600 mm (approximately 7.9 inches x 23.6 inches) to 500 mm x 1200 mm (approximately 19.7 inches x 47.2 inches).' }
+    ],
+    imgSrc: '../img/chillers/vrf-dx-systems.png'
+}
 ];
 
 const productContainer = document.getElementById('product-container');
@@ -167,9 +179,6 @@ products.forEach((product, index) => {
                 <img src="${product.imgSrc}" class="card-img-top" alt="${product.title}">
                 <div class="card-body">
                     <h5 class="card-title">${product.title}</h5>
-                    <ul class="list-unstyled">
-                        ${product.specifications.map(spec => `<li><strong>${spec.name}:</strong> ${spec.value}</li>`).join('')}
-                    </ul>
                     <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#productModal" data-index="${index}">Read More</button>
                 </div>
             </div>
@@ -177,6 +186,8 @@ products.forEach((product, index) => {
     `;
     productContainer.innerHTML += cardHTML;
 });
+
+// <ul class="list-unstyled">${product.specifications.map(spec => `<li><strong>${spec.name}:</strong> ${spec.value}</li>`).join('')} </ul>
 
 // Event listener for modal to load product details
 document.getElementById('productModal').addEventListener('show.bs.modal', event => {

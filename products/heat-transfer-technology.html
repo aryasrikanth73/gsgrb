@@ -91,12 +91,9 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body d-flex flex-column flex-md-row"> <!-- Flexbox for responsive layout -->
-                <img id="modalProductImg" src="" class="img-fluid me-3 mb-3 mb-md-0" alt="Product Image" style="max-width: 100%; max-height: 300px; object-fit: cover;"> <!-- Responsive image -->
+                <img id="modalProductImg" src="" class="img-fluid me-3 mb-3 mb-md-0" alt="Product Image" style="max-width: 300px; max-height: 300px; object-fit: cover;"> <!-- Responsive image -->
                 <div class="flex-grow-1"> <!-- Allow this div to grow and fill the remaining space -->
                     <ul id="modalProductSpecs" class="list-unstyled mb-3"></ul>
-                    <div id="modalProductDescription"></div>
-                    <h6>More Images:</h6>
-                    <div id="modalAdditionalImages" class="d-flex flex-wrap"></div>
                 </div>
             </div>
         </div>
@@ -120,13 +117,7 @@
             { name: 'Plate Size', value: '200 mm × 500 mm (8 in × 20 in) or smaller.' },
             { name: 'Flow Rate', value: '0.1 m³/h to 10 m³/h (0.5 GPM to 44 GPM).' },
         ],
-        imgSrc: '../img/heat-exhangers/heat-exhangers-1.png',
-        description: 'Detailed description for Product 1. ',
-        additionalImages: [
-            'https://via.placeholder.com/150',
-            'https://via.placeholder.com/150',
-            'https://via.placeholder.com/150'
-        ],
+        imgSrc: '../img/heat-exhangers/heat-exhangers-1.png'
     },
     {
         title: 'Hygenic Plate Heat Exchangers',
@@ -137,13 +128,7 @@
             { name: 'Plate Size', value: 'Typically range from 100 mm x 300 mm to 300 mm x 600 mm (4 in x 12 in to 12 in x 24 in).' },
             { name: 'Flow Rate', value: ' 0.5 m³/h to 10 m³/h (2.2 GPM to 44 GPM).' },
         ],
-        imgSrc: '../img/heat-exhangers/heat-exhangers-2.png',
-        description: 'Detailed description for Product 2.',
-        additionalImages: [
-            'https://via.placeholder.com/150',
-            'https://via.placeholder.com/150',
-            'https://via.placeholder.com/150'
-        ],
+        imgSrc: '../img/heat-exhangers/heat-exhangers-2.png'
     },
     {
         title: 'Semi Welded Heat Exchangers',
@@ -154,13 +139,7 @@
             { name: 'Plate Size', value: 'Value 4' },
             { name: 'Flow Rate', value: 'Value 5' },
         ],
-        imgSrc: '../img/heat-exhangers/heat-exhangers-3.png',
-        description: 'Detailed description for Product 3.',
-        additionalImages: [
-            'https://via.placeholder.com/150',
-            'https://via.placeholder.com/150',
-            'https://via.placeholder.com/150'
-        ],
+        imgSrc: '../img/heat-exhangers/heat-exhangers-3.png'
     },{
         title: 'Shell & Tube Heat Exchnger',
         specifications: [
@@ -170,13 +149,7 @@
             { name: 'Plate Size', value: 'Value 4' },
             { name: 'Flow Rate', value: 'Value 5' },
         ],
-        imgSrc: '../img/heat-exhangers/heat-exhangers-4.png',
-        description: 'Detailed description for Product 3.',
-        additionalImages: [
-            'https://via.placeholder.com/150',
-            'https://via.placeholder.com/150',
-            'https://via.placeholder.com/150'
-        ],
+        imgSrc: '../img/heat-exhangers/heat-exhangers-4.png'
     },{
         title: 'Hot Water Generators',
         specifications: [
@@ -186,13 +159,7 @@
             { name: 'Plate Size', value: 'Value 4' },
             { name: 'Flow Rate', value: 'Value 5' },
         ],
-        imgSrc: '../img/heat-exhangers/heat-exhangers-5.png',
-        description: 'Detailed description for Product 3.',
-        additionalImages: [
-            'https://via.placeholder.com/150',
-            'https://via.placeholder.com/150',
-            'https://via.placeholder.com/150'
-        ],
+        imgSrc: '../img/heat-exhangers/heat-exhangers-5.png'
     },{
         title: 'Point of Coolers',
         specifications: [
@@ -202,13 +169,7 @@
             { name: 'Plate Size', value: 'Value 4' },
             { name: 'Flow Rate', value: 'Value 5' },
         ],
-        imgSrc: '../img/heat-exhangers/heat-exhangers-6.png',
-        description: 'Detailed description for Product 3.',
-        additionalImages: [
-            'https://via.placeholder.com/150',
-            'https://via.placeholder.com/150',
-            'https://via.placeholder.com/150'
-        ],
+        imgSrc: '../img/heat-exhangers/heat-exhangers-6.png'
     },
 ];
 
@@ -244,13 +205,6 @@ document.getElementById('productModal').addEventListener('show.bs.modal', event 
     // Update specifications
     const specsList = product.specifications.map(spec => `<li><strong>${spec.name}:</strong> ${spec.value}</li>`).join('');
     document.getElementById('modalProductSpecs').innerHTML = specsList;
-
-    // Update description
-    document.getElementById('modalProductDescription').innerText = product.description;
-
-    // Update additional images
-    const additionalImagesHTML = product.additionalImages.map(img => `<img src="${img}" class="img-thumbnail me-2" style="width: 100px; height: 100px;" alt="Additional Image">`).join('');
-    document.getElementById('modalAdditionalImages').innerHTML = additionalImagesHTML;
 });
 </script>
     <!-- Products Section End -->

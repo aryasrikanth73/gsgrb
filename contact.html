@@ -102,26 +102,67 @@
                             <div class="row g-3">
                                 <div class="col-md-6">
                                     <div class="form-floating">
-                                        <input type="text" class="form-control" id="name" placeholder="Your Name">
+                                        <input type="text" class="form-control" id="name" name="name" placeholder="Your Name" required>
                                         <label for="name">Your Name</label>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-floating">
-                                        <input type="email" class="form-control" id="email" placeholder="Your Email">
+                                        <input type="text" class="form-control" id="company" name="company" placeholder="Company Name">
+                                        <label for="company">Company Name</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-floating">
+                                        <input type="tel" class="form-control" id="phone" name="phone" placeholder="Phone Number" required>
+                                        <label for="phone">Phone Number</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-floating">
+                                        <input type="email" class="form-control" id="email" name="email" placeholder="Your Email" required>
                                         <label for="email">Your Email</label>
                                     </div>
                                 </div>
-                                <div class="col-12">
+                                <div class="col-md-6">
                                     <div class="form-floating">
-                                        <input type="text" class="form-control" id="subject" placeholder="Subject">
-                                        <label for="subject">Subject</label>
+                                        <input type="text" class="form-control" id="country" name="country" placeholder="Country">
+                                        <label for="country">Country</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-floating">
+                                        <select class="form-select" id="industry" name="industry">
+                                            <option value="" selected>--- Select ---</option>
+                                            <option value="1">Automotive</option>
+                                            <option value="2">Bio-Fuels & Ethanol</option>
+                                            <option value="3">Chemicals & Petrochemicals</option>
+                                            <option value="4">Construction Equipment</option>
+                                            <option value="5">Pharmaceuticals</option>
+                                            <option value="6">Edible Oils</option>
+                                            <option value="7">Food & Beverage</option>
+                                            <option value="8">HVAC</option>
+                                            <option value="9">Marine</option>
+                                            <option value="10">Metals</option>
+                                            <option value="11">Milk Processing</option>
+                                            <option value="12">Hydraulic & Lube Oil Cooling</option>
+                                            <option value="13">Material Handling</option>
+                                            <option value="14">Power Generation</option>
+                                            <option value="15">Railway Locomotives</option>
+                                            <option value="16">Refrigeration</option>
+                                            <option value="17">Stone Crushers</option>
+                                            <option value="18">Sugar & Starch</option>
+                                            <option value="19">Water Treatment</option>
+                                            <option value="20">Wind Mills</option>
+                                            <option value="999">Other</option>
+                                        </select>
+                                        <label for="industry">Industry</label>
                                     </div>
                                 </div>
                                 <div class="col-12">
                                     <div class="form-floating">
-                                        <textarea class="form-control" placeholder="Leave a message here" id="message" style="height: 100px"></textarea>
-                                        <label for="message">Message</label>
+                                        <textarea class="form-control" id="remarks" name="remarks" placeholder="Please provide details that may help with your enquiry" style="height: 100px"></textarea>
+                                        <label for="remarks">Please provide details that may help with your enquiry</label>
                                     </div>
                                 </div>
                                 <div class="col-12">
@@ -130,6 +171,7 @@
                             </div>
                         </form>
                     </div>
+                    
                 </div>
                 <div class="col-md-6 pe-lg-0 wow fadeInRight" data-wow-delay="0.1s">
                     <div class="position-relative h-100">
@@ -164,11 +206,11 @@
                 <div class="col-lg-3 col-md-6">
                     <h4 class="text-light mb-4">Products</h4>
                     <a class="btn btn-link" href="products/heat-transfer-technology.html">Heat Transfer Technology</a>
-<a class="btn btn-link" href="products/industrial-chillers-heat-pumps.html">Industrial Chillers & Heat Pumps</a>
-<a class="btn btn-link" href="products/air-compressors-vacuum-pumps.html">Air Compressors & Vacuum Pumps</a>
-<a class="btn btn-link" href="products/oil-filtration-separation-technology.html">Oil Filtration & Separation Technology</a>
-<a class="btn btn-link" href="products/water-systems.html">Water Systems & CIP Systems</a>
-<a class="btn btn-link" href="products/fluid-handling-systems.html">Fluid Handling Systems</a>
+                    <a class="btn btn-link" href="products/industrial-chillers-heat-pumps.html">Industrial Chillers & Heat Pumps</a>
+                    <a class="btn btn-link" href="products/air-compressors-vacuum-pumps.html">Air Compressors & Vacuum Pumps</a>
+                    <a class="btn btn-link" href="products/oil-filtration-separation-technology.html">Oil Filtration & Separation Technology</a>
+                    <a class="btn btn-link" href="products/water-systems.html">Water Systems & CIP Systems</a>
+                    <a class="btn btn-link" href="products/fluid-handling-systems.html">Fluid Handling Systems</a>
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <h4 class="text-light mb-4">Quick Links</h4>
@@ -181,7 +223,7 @@
                 <div class="col-lg-3 col-md-6">
                     <h4 class="text-light mb-4">Our Branches</h4>
                     <a class="btn btn-link" href="">Tirupati</a>
-<a class="btn btn-link" href="">Ananthapur</a>
+                    <a class="btn btn-link" href="">Ananthapur</a>
                     <a class="btn btn-link" href="">Vijayawada</a>
                     <a class="btn btn-link" href="">Vishakhapatnam</a>
                     <a class="btn btn-link" href="">Hyderabad</a>
