@@ -73,7 +73,7 @@
     </nav>
     <!-- Navbar End -->
 
-<!-- Products Section Start -->
+    <!-- Products Section Start -->
 <div class="container my-5">
     <h1 class="text-center mb-4">Water Systems & CIP Systems</h1>
     <div class="row" id="product-container">
@@ -84,19 +84,16 @@
 
 <!-- Modal Structure -->
 <div class="modal fade" id="productModal" tabindex="-1" aria-labelledby="productModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
+     <div class="modal-dialog modal-lg modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="productModalLabel">Product Title</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body d-flex flex-column flex-md-row"> <!-- Flexbox for responsive layout -->
-                <img id="modalProductImg" src="" class="img-fluid me-3 mb-3 mb-md-0" alt="Product Image" style="max-width: 100%; max-height: 300px; object-fit: cover;"> <!-- Responsive image -->
+                <img id="modalProductImg" src="" class="img-fluid me-3 mb-3 mb-md-0" alt="Product Image" style="max-width: 300px; max-height: 300px; object-fit: cover;"> <!-- Responsive image -->
                 <div class="flex-grow-1"> <!-- Allow this div to grow and fill the remaining space -->
                     <ul id="modalProductSpecs" class="list-unstyled mb-3"></ul>
-                    <div id="modalProductDescription"></div>
-                    <h6>More Images:</h6>
-                    <div id="modalAdditionalImages" class="d-flex flex-wrap"></div>
                 </div>
             </div>
         </div>
@@ -112,35 +109,89 @@
 <script>
     const products = [
     {
-        title: 'Product 1',
-        specifications: [
-            { name: 'Specification 1', value: 'Value 1' },
-            { name: 'Specification 2', value: 'Value 2' },
-            { name: 'Specification 3', value: 'Value 3' },
+        "title": "Filtration System",
+        "specifications": [
+            { "name": "Specifications", "value": "A filtration system is designed to remove contaminants from fluids (like water, oil, or air) across a range of applications, from industrial to residential. The specifications vary depending on the type of fluid being filtered, the level of filtration required, and the flow rate." }
         ],
-        imgSrc: 'https://www17.wellsfargomedia.com/assets/images/the-private-bank/mountain-stream-350x200.jpg',
-        description: 'Detailed description for Product 1. '
+        "imgSrc": "../img/filtration-systems/filtration-system.png"
     },
     {
-        title: 'Product 2',
-        specifications: [
-            { name: 'Specification 1', value: 'Value 1' },
-            { name: 'Specification 2', value: 'Value 2' },
-            { name: 'Specification 3', value: 'Value 3' },
+        "title": "Ultrafiltration System",
+        "specifications": [
+            { "name": "Specifications", "value": "Ultrafiltration (UF) systems are membrane-based filtration systems designed to remove suspended solids, bacteria, viruses, and other contaminants from water and various solutions. They are widely used in water treatment, wastewater treatment, food and beverage processing, and pharmaceutical applications." }
         ],
-        imgSrc: 'https://www17.wellsfargomedia.com/assets/images/the-private-bank/oil-field-and-drilling-rigs-350x200.jpg',
-        description: 'Detailed description for Product 2.'
+        "imgSrc": "../img/filtration-systems/ultrafiltration-system.png"
     },
     {
-        title: 'Product 3',
-        specifications: [
-            { name: 'Specification 1', value: 'Value 1' },
-            { name: 'Specification 2', value: 'Value 2' },
-            { name: 'Specification 3', value: 'Value 3' },
+        "title": "Reverse Osmosis System",
+        "specifications": [
+            { "name": "Specifications", "value": "Reverse osmosis (RO) systems are widely used for water purification and desalination, effectively removing dissolved salts, organic compounds, and other impurities from water." }
         ],
-        imgSrc: 'https://static.vecteezy.com/system/resources/thumbnails/038/987/289/small/ai-generated-majestic-mountain-peak-reflects-tranquil-sunset-over-water-generated-by-ai-photo.jpg',
-        description: 'Detailed description for Product 3.'
+        "imgSrc": "../img/filtration-systems/reverse-osmosis-system.png"
     },
+    {
+        "title": "Purified Water Generation",
+        "specifications": [
+            { "name": "Specifications", "value": "Purified water generation systems are essential for producing high-quality water for various applications, including pharmaceuticals, laboratories, food and beverage processing, and industrial processes. The specifications for a purified water generation system can vary depending on the required water quality, application, and technology used." }
+        ],
+        "imgSrc": "../img/filtration-systems/purified-water-generation.png"
+    },
+    {
+        "title": "Purified Water Storage and Distribution",
+        "specifications": [
+            { "name": "Specifications", "value": "Purified water storage and distribution systems are crucial for maintaining the quality and integrity of purified water until it is used. These systems ensure that the water is stored safely, distributed efficiently, and protected from contamination." }
+        ],
+        "imgSrc": "../img/filtration-systems/purified-water-storage.png"
+    },
+    {
+        "title": "Purified Water Distribution Skid",
+        "specifications": [
+            { "name": "Specifications", "value": "A purified water distribution skid is a modular system designed to facilitate the safe and efficient distribution of purified water to various points of use in an industrial or commercial setting. These skids typically integrate various components to ensure water quality and flow control." }
+        ],
+        "imgSrc": "../img/filtration-systems/purified-water-distribution-skid.png"
+    },
+    {
+        "title": "Water for Injection Generation System",
+        "specifications": [
+            { "name": "Specifications", "value": "Water for Injection (WFI) is a highly purified form of water used in pharmaceutical and biopharmaceutical manufacturing processes, particularly for the preparation of injectable medications and other critical applications. The generation of WFI involves stringent specifications to ensure its purity and safety." }
+        ],
+        "imgSrc": "../img/filtration-systems/water-for-injection.png"
+    },
+    {
+        "title": "Pure Steam Generation System",
+        "specifications": [
+            { "name": "Specifications", "value": "Pure steam generation systems are essential in various industries, particularly in pharmaceutical and biotechnology applications, where sterile steam is required for sterilization processes, equipment cleaning, and product preparation. The specifications for a pure steam generation system must ensure that the produced steam is of the highest quality, meeting stringent regulatory standards." }
+        ],
+        "imgSrc": "../img/filtration-systems/pure-steam-generation.png"
+    },
+    {
+        "title": "Manufacturing Vessels and Equipment",
+        "specifications": [
+            { "name": "Specifications", "value": "Manufacturing vessels and equipment are essential components in various industrial processes, including chemical, pharmaceutical, food and beverage, and biotechnology industries. These vessels and equipment must meet specific standards and specifications to ensure safety, efficiency, and compliance with regulatory requirements." }
+        ],
+        "imgSrc": "../img/filtration-systems/manufacturing-vessels.png"
+    },
+    {
+        "title": "CIP System",
+        "specifications": [
+            { "name": "Specifications", "value": "A Clean-in-Place (CIP) system is an essential component in various industries, particularly in food and beverage, pharmaceuticals, and biotechnology. It allows for the efficient and thorough cleaning of equipment and piping without disassembly, ensuring hygiene and compliance with regulatory standards." }
+        ],
+        "imgSrc": "../img/filtration-systems/cip-system.png"
+    },
+    {
+        "title": "Centrifugal Pumps",
+        "specifications": [
+            { "name": "Specifications", "value": "Centrifugal pumps are widely used in various industries for moving fluids. They work by converting rotational energy, typically from an electric motor, into energy in the fluid being pumped." }
+        ],
+        "imgSrc": "../img/filtration-systems/centrifugal-pumps.png"
+    },
+    {
+        "title": "Horizontal Pumps",
+        "specifications": [
+            { "name": "Specifications", "value": "Horizontal pumps are a type of centrifugal pump commonly used in various industries for transporting liquids. They feature a horizontal orientation of the pump shaft and are well-suited for high flow rates and lower head applications." }
+        ],
+        "imgSrc": "../img/filtration-systems/horizontal-pumps.png"
+    }
 ];
 
 const productContainer = document.getElementById('product-container');
@@ -152,9 +203,6 @@ products.forEach((product, index) => {
                 <img src="${product.imgSrc}" class="card-img-top" alt="${product.title}">
                 <div class="card-body">
                     <h5 class="card-title">${product.title}</h5>
-                    <ul class="list-unstyled">
-                        ${product.specifications.map(spec => `<li><strong>${spec.name}:</strong> ${spec.value}</li>`).join('')}
-                    </ul>
                     <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#productModal" data-index="${index}">Read More</button>
                 </div>
             </div>
@@ -162,6 +210,8 @@ products.forEach((product, index) => {
     `;
     productContainer.innerHTML += cardHTML;
 });
+
+// <ul class="list-unstyled">${product.specifications.map(spec => `<li><strong>${spec.name}:</strong> ${spec.value}</li>`).join('')} </ul>
 
 // Event listener for modal to load product details
 document.getElementById('productModal').addEventListener('show.bs.modal', event => {
@@ -176,15 +226,9 @@ document.getElementById('productModal').addEventListener('show.bs.modal', event 
     // Update specifications
     const specsList = product.specifications.map(spec => `<li><strong>${spec.name}:</strong> ${spec.value}</li>`).join('');
     document.getElementById('modalProductSpecs').innerHTML = specsList;
-
-    // Update description
-    document.getElementById('modalProductDescription').innerText = product.description;
-
-    // Update additional images
-    const additionalImagesHTML = product.additionalImages.map(img => `<img src="${img}" class="img-thumbnail me-2" style="width: 100px; height: 100px;" alt="Additional Image">`).join('');
-    document.getElementById('modalAdditionalImages').innerHTML = additionalImagesHTML;
 });
 </script>
+    <!-- Products Section End -->
 
     <!-- Footer Start -->
     <div class="container-fluid bg-dark text-light footer pt-5 wow fadeIn" data-wow-delay="0.1s" style="margin-top: 6rem;">
@@ -205,11 +249,11 @@ document.getElementById('productModal').addEventListener('show.bs.modal', event 
                 <div class="col-lg-3 col-md-6">
                     <h4 class="text-light mb-4">Products</h4>
                     <a class="btn btn-link" href="heat-transfer-technology.html">Heat Transfer Technology</a>
-<a class="btn btn-link" href="industrial-chillers-heat-pumps.html">Industrial Chillers & Heat Pumps</a>
-<a class="btn btn-link" href="air-compressors-vacuum-pumps.html">Air Compressors & Vacuum Pumps</a>
-<a class="btn btn-link" href="oil-filtration-separation-technology.html">Oil Filtration & Separation Technology</a>
-<a class="btn btn-link" href="water-systems.html">Water Systems & CIP Systems</a>
-<a class="btn btn-link" href="fluid-handling-systems.html">Fluid Handling Systems</a>
+                    <a class="btn btn-link" href="industrial-chillers-heat-pumps.html">Industrial Chillers & Heat Pumps</a>
+                    <a class="btn btn-link" href="air-compressors-vacuum-pumps.html">Air Compressors & Vacuum Pumps</a>
+                    <a class="btn btn-link" href="oil-filtration-separation-technology.html">Oil Filtration & Separation Technology</a>
+                    <a class="btn btn-link" href="water-systems.html">Water Systems & CIP Systems</a>
+                    <a class="btn btn-link" href="fluid-handling-systems.html">Fluid Handling Systems</a>
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <h4 class="text-light mb-4">Quick Links</h4>
@@ -222,7 +266,7 @@ document.getElementById('productModal').addEventListener('show.bs.modal', event 
                 <div class="col-lg-3 col-md-6">
                     <h4 class="text-light mb-4">Our Branches</h4>
                     <a class="btn btn-link" href="">Tirupati</a>
-<a class="btn btn-link" href="">Ananthapur</a>
+                    <a class="btn btn-link" href="">Ananthapur</a>
                     <a class="btn btn-link" href="">Vijayawada</a>
                     <a class="btn btn-link" href="">Vishakhapatnam</a>
                     <a class="btn btn-link" href="">Hyderabad</a>

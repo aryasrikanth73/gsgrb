@@ -84,19 +84,16 @@
 
 <!-- Modal Structure -->
 <div class="modal fade" id="productModal" tabindex="-1" aria-labelledby="productModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="productModalLabel">Product Title</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body d-flex flex-column flex-md-row"> <!-- Flexbox for responsive layout -->
-                <img id="modalProductImg" src="" class="img-fluid me-3 mb-3 mb-md-0" alt="Product Image" style="max-width: 100%; max-height: 300px; object-fit: cover;"> <!-- Responsive image -->
+                <img id="modalProductImg" src="" class="img-fluid me-3 mb-3 mb-md-0" alt="Product Image" style="max-width: 300px; max-height: 300px; object-fit: cover;"> <!-- Responsive image -->
                 <div class="flex-grow-1"> <!-- Allow this div to grow and fill the remaining space -->
                     <ul id="modalProductSpecs" class="list-unstyled mb-3"></ul>
-                    <div id="modalProductDescription"></div>
-                    <h6>More Images:</h6>
-                    <div id="modalAdditionalImages" class="d-flex flex-wrap"></div>
                 </div>
             </div>
         </div>
@@ -112,35 +109,40 @@
 <script>
     const products = [
     {
-        title: 'Product 1',
-        specifications: [
-            { name: 'Specification 1', value: 'Value 1' },
-            { name: 'Specification 2', value: 'Value 2' },
-            { name: 'Specification 3', value: 'Value 3' },
+        "title": "Magnetic Drive Pumps",
+        "specifications": [
+            { "name": "Specifications", "value": "Magnetic drive pumps, also known as mag drive pumps or magnetically driven pumps, are specialized centrifugal pumps that utilize a magnetic coupling to transmit rotational energy from the motor to the impeller, eliminating the need for traditional mechanical seals. This design provides advantages in terms of safety, efficiency, and maintenance, particularly when handling hazardous or corrosive liquids." }
         ],
-        imgSrc: 'https://www17.wellsfargomedia.com/assets/images/the-private-bank/mountain-stream-350x200.jpg',
-        description: 'Detailed description for Product 1. '
+        "imgSrc": "../img/pumps/magnetic-drive-pumps.png"
     },
     {
-        title: 'Product 2',
-        specifications: [
-            { name: 'Specification 1', value: 'Value 1' },
-            { name: 'Specification 2', value: 'Value 2' },
-            { name: 'Specification 3', value: 'Value 3' },
+        "title": "Centrifugal Pumps",
+        "specifications": [
+            { "name": "Specifications", "value": "Centrifugal pumps are among the most widely used types of pumps in various industries, designed to move fluids by converting rotational energy into hydraulic energy. They are particularly effective for handling large volumes of liquid at relatively low pressures." }
         ],
-        imgSrc: 'https://www17.wellsfargomedia.com/assets/images/the-private-bank/oil-field-and-drilling-rigs-350x200.jpg',
-        description: 'Detailed description for Product 2.'
+        "imgSrc": "../img/pumps/centrifugal-pumps.png"
     },
     {
-        title: 'Product 3',
-        specifications: [
-            { name: 'Specification 1', value: 'Value 1' },
-            { name: 'Specification 2', value: 'Value 2' },
-            { name: 'Specification 3', value: 'Value 3' },
+        "title": "Rotan Gear Pumps",
+        "specifications": [
+            { "name": "Specifications", "value": "ROTAN gear pumps, also known as rotary gear pumps, are positive displacement pumps that utilize rotating gears to move fluids. They are highly efficient and capable of handling a wide range of viscosities, making them suitable for various applications in industries such as oil and gas, chemicals, food and beverage, and pharmaceuticals." }
         ],
-        imgSrc: 'https://static.vecteezy.com/system/resources/thumbnails/038/987/289/small/ai-generated-majestic-mountain-peak-reflects-tranquil-sunset-over-water-generated-by-ai-photo.jpg',
-        description: 'Detailed description for Product 3.'
+        "imgSrc": "../img/pumps/rotan-gear-pumps.png"
     },
+    {
+        "title": "Non-Metallic Pumps (PP-PVDF)",
+        "specifications": [
+            { "name": "Specifications", "value": "Non-metallic pumps made from materials like polypropylene (PP) and polyvinylidene fluoride (PVDF) are designed to handle corrosive and abrasive fluids, making them suitable for various chemical processing applications, wastewater treatment, and more." }
+        ],
+        "imgSrc": "../img/pumps/non-metallic-pp-pvdf.png"
+    },
+    {
+        "title": "Non-Metallic Pumps (PP Lined/PTFE)",
+        "specifications": [
+            { "name": "Specifications", "value": "Non-metallic pumps with polypropylene (PP) or polytetrafluoroethylene (PTFE) lining are designed to handle aggressive and corrosive fluids while providing excellent chemical resistance. These pumps are commonly used in the chemical, pharmaceutical, and food processing industries." }
+        ],
+        "imgSrc": "../img/pumps/non-metallic-pp-lined-ptfe.png"
+    }
 ];
 
 const productContainer = document.getElementById('product-container');
@@ -152,9 +154,6 @@ products.forEach((product, index) => {
                 <img src="${product.imgSrc}" class="card-img-top" alt="${product.title}">
                 <div class="card-body">
                     <h5 class="card-title">${product.title}</h5>
-                    <ul class="list-unstyled">
-                        ${product.specifications.map(spec => `<li><strong>${spec.name}:</strong> ${spec.value}</li>`).join('')}
-                    </ul>
                     <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#productModal" data-index="${index}">Read More</button>
                 </div>
             </div>
@@ -162,6 +161,8 @@ products.forEach((product, index) => {
     `;
     productContainer.innerHTML += cardHTML;
 });
+
+// <ul class="list-unstyled">${product.specifications.map(spec => `<li><strong>${spec.name}:</strong> ${spec.value}</li>`).join('')} </ul>
 
 // Event listener for modal to load product details
 document.getElementById('productModal').addEventListener('show.bs.modal', event => {
@@ -176,13 +177,6 @@ document.getElementById('productModal').addEventListener('show.bs.modal', event 
     // Update specifications
     const specsList = product.specifications.map(spec => `<li><strong>${spec.name}:</strong> ${spec.value}</li>`).join('');
     document.getElementById('modalProductSpecs').innerHTML = specsList;
-
-    // Update description
-    document.getElementById('modalProductDescription').innerText = product.description;
-
-    // Update additional images
-    const additionalImagesHTML = product.additionalImages.map(img => `<img src="${img}" class="img-thumbnail me-2" style="width: 100px; height: 100px;" alt="Additional Image">`).join('');
-    document.getElementById('modalAdditionalImages').innerHTML = additionalImagesHTML;
 });
 </script>
     <!-- Products Section End -->
@@ -206,11 +200,11 @@ document.getElementById('productModal').addEventListener('show.bs.modal', event 
                 <div class="col-lg-3 col-md-6">
                     <h4 class="text-light mb-4">Products</h4>
                     <a class="btn btn-link" href="heat-transfer-technology.html">Heat Transfer Technology</a>
-<a class="btn btn-link" href="industrial-chillers-heat-pumps.html">Industrial Chillers & Heat Pumps</a>
-<a class="btn btn-link" href="air-compressors-vacuum-pumps.html">Air Compressors & Vacuum Pumps</a>
-<a class="btn btn-link" href="oil-filtration-separation-technology.html">Oil Filtration & Separation Technology</a>
-<a class="btn btn-link" href="water-systems.html">Water Systems & CIP Systems</a>
-<a class="btn btn-link" href="fluid-handling-systems.html">Fluid Handling Systems</a>
+                    <a class="btn btn-link" href="industrial-chillers-heat-pumps.html">Industrial Chillers & Heat Pumps</a>
+                    <a class="btn btn-link" href="air-compressors-vacuum-pumps.html">Air Compressors & Vacuum Pumps</a>
+                    <a class="btn btn-link" href="oil-filtration-separation-technology.html">Oil Filtration & Separation Technology</a>
+                    <a class="btn btn-link" href="water-systems.html">Water Systems & CIP Systems</a>
+                    <a class="btn btn-link" href="fluid-handling-systems.html">Fluid Handling Systems</a>
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <h4 class="text-light mb-4">Quick Links</h4>
@@ -223,7 +217,7 @@ document.getElementById('productModal').addEventListener('show.bs.modal', event 
                 <div class="col-lg-3 col-md-6">
                     <h4 class="text-light mb-4">Our Branches</h4>
                     <a class="btn btn-link" href="">Tirupati</a>
-<a class="btn btn-link" href="">Ananthapur</a>
+                    <a class="btn btn-link" href="">Ananthapur</a>
                     <a class="btn btn-link" href="">Vijayawada</a>
                     <a class="btn btn-link" href="">Vishakhapatnam</a>
                     <a class="btn btn-link" href="">Hyderabad</a>
