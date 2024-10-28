@@ -20,6 +20,11 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
 
+    <!-- Include Animate.css and WOW.js -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+
+
     <!-- Customized Bootstrap Stylesheet -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
@@ -65,7 +70,7 @@
         <h2 class="text-center mb-4">Technical Services</h2>
 
         <!-- Heat Transfer Technology -->
-        <div class="row align-items-center mb-5">
+        <div class="row align-items-center wow animate__animated animate__fadeInRight mb-5">
             <div class="col-md-6">
                 <img src="img/heat-transfer-technology.png" alt="Heat Transfer Technology" class="img-fluid">
             </div>
@@ -76,7 +81,7 @@
         </div>
 
         <!-- Industrial Chillers & Heat Pumps -->
-        <div class="row align-items-center mb-5 flex-md-row-reverse">
+        <div class="row align-items-center wow animate__animated animate__fadeInLeft mb-5 flex-md-row-reverse">
             <div class="col-md-6">
                 <img src="img/industrial-chillers-heat-pumps.png" alt="Industrial Chillers & Heat Pumps" class="img-fluid">
             </div>
@@ -87,7 +92,7 @@
         </div>
 
         <!-- Air Compressors & Vacuum Pumps -->
-        <div class="row align-items-center mb-5">
+        <div class="row align-items-center wow animate__animated animate__fadeInRight mb-5">
             <div class="col-md-6">
                 <img src="img/air-compressors-vacuum-pumps.png" alt="Air Compressors & Vacuum Pumps" class="img-fluid">
             </div>
@@ -98,7 +103,7 @@
         </div>
 
         <!-- Oil Filtration & Separation Technology -->
-        <div class="row align-items-center mb-5 flex-md-row-reverse">
+        <div class="row align-items-center wow animate__animated animate__fadeInLeft mb-5 flex-md-row-reverse">
             <div class="col-md-6">
                 <img src="img/oil-filtration-separation-technology.png" alt="Oil Filtration & Separation Technology" class="img-fluid">
             </div>
@@ -109,7 +114,7 @@
         </div>
 
         <!-- Water Systems & CIP Systems -->
-        <div class="row align-items-center mb-5">
+        <div class="row align-items-center wow animate__animated animate__fadeInRight mb-5">
             <div class="col-md-6">
                 <img src="img/water-systems.png" alt="Water Systems & CIP Systems" class="img-fluid">
             </div>
@@ -120,7 +125,7 @@
         </div>
 
         <!-- Fluid Handling Systems -->
-        <div class="row align-items-center mb-5 flex-md-row-reverse">
+        <div class="row align-items-center wow animate__animated animate__fadeInLeft mb-5 flex-md-row-reverse">
             <div class="col-md-6">
                 <img src="img/fluid-handling-systems.png" alt="Fluid Handling Systems" class="img-fluid">
             </div>
@@ -188,10 +193,17 @@
     <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-0 back-to-top"><i class="bi bi-arrow-up"></i></a>
 
     <!-- JavaScript Libraries -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Template Javascript -->
-    <script src="js/main.js"></script>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Template Javascript -->
+<script src="js/main.js"></script>
+<script>
+    $(document).ready(function () {
+        new WOW().init();
+    });
+</script>
+
 </body>
 
 </html>
