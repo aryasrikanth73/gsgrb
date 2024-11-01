@@ -108,7 +108,7 @@
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-floating">
-                                        <input type="text" class="form-control" id="company" name="company" placeholder="Company Name">
+                                        <input type="text" class="form-control" id="company" name="company" placeholder="Company Name" required>
                                         <label for="company">Company Name</label>
                                     </div>
                                 </div>
@@ -126,13 +126,13 @@
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-floating">
-                                        <input type="text" class="form-control" id="country" name="country" placeholder="Country">
+                                        <input type="text" class="form-control" id="country" name="country" placeholder="Country" required>
                                         <label for="country">Country</label>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-floating">
-                                        <select class="form-select" id="industry" name="industry">
+                                        <select class="form-select" id="industry" name="industry" required>
                                             <option value="" selected>--- Select ---</option>
                                             <option value="1">Automotive</option>
                                             <option value="2">Bio-Fuels & Ethanol</option>
@@ -161,7 +161,7 @@
                                 </div>
                                 <div class="col-12">
                                     <div class="form-floating">
-                                        <textarea class="form-control" id="remarks" name="remarks" placeholder="Please provide details that may help with your enquiry" style="height: 100px"></textarea>
+                                        <textarea class="form-control" id="remarks" name="remarks" placeholder="Please provide details that may help with your enquiry" style="height: 100px" required></textarea>
                                         <label for="remarks">Please provide details that may help with your enquiry</label>
                                     </div>
                                 </div>
@@ -184,6 +184,33 @@
             </div>
         </div>
     </div>
+    <script>
+        document.querySelector('form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the default form submission
+            
+            // Retrieve form data based on HTML IDs
+            var name = document.getElementById('name').value;
+            var company = document.getElementById('company').value;
+            var phone = document.getElementById('phone').value;
+            var email = document.getElementById('email').value;
+            var country = document.getElementById('country').value;
+            var industry = document.getElementById('industry').options[document.getElementById('industry').selectedIndex].text;
+            var remarks = document.getElementById('remarks').value;
+            
+            // WhatsApp contact number (replace with your number)
+            var whatsappNumber = '919666777401';
+            
+            // Format the message with line breaks
+            var formattedMessage = `Hi👋🏻 *GS GRB,*\nMy details are mentioned below. Call📞 me back.\n*Name:* ${name}\n*Company:* ${company}\n*Phone:* ${phone}\n*Email:* ${email}\n*Country:* ${country}\n*Industry:* ${industry}\n*Remarks:* ${remarks}`;
+            
+            // Create the WhatsApp URL
+            var whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(formattedMessage)}`;
+            
+            // Open WhatsApp
+            window.open(whatsappURL, '_blank');
+        });
+    </script>
+    
     <!-- Contact End -->
 
 
